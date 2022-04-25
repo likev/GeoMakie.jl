@@ -82,7 +82,8 @@ surface!(ax1, lons, lats, field; shading = false, colormap = (:plasma, 0.45))
 surface!(ax2, lons, lats, field; shading = false)
 hidedecorations!(ax1)
 
-fig</code></pre><h2 id="Orthographic-projection"><a class="docs-heading-anchor" href="#Orthographic-projection">Orthographic projection</a><a id="Orthographic-projection-1"></a><a class="docs-heading-anchor-permalink" href="#Orthographic-projection" title="Permalink"></a></h2><pre><code class="language- hljs">
+fig</code></pre><h2 id="Orthographic-projection"><a class="docs-heading-anchor" href="#Orthographic-projection">Orthographic projection</a><a id="Orthographic-projection-1"></a><a class="docs-heading-anchor-permalink" href="#Orthographic-projection" title="Permalink"></a></h2><pre><code class="language- hljs">using GeoMakie, CairoMakie
+
 # Limited-domain projections (like orthographic) must have
 # their limits correctly set!
 # If the limits are too large, you may get a blank figure.
@@ -94,7 +95,7 @@ ga = GeoAxis(
     coastlines = true,
     title = &quot;Orthographic projection with proper limits&quot;
 )
-hidedecorations!(ga)
+# hidedecorations!(ga)
 sp = surface!(ga, lons, lats, field; shading = false, colormap = :rainbow_bgyrm_35_85_c69_n256)
 cb = Colorbar(fig[1, 2], sp)
 
@@ -161,4 +162,4 @@ cb = Colorbar(fig[1,2], hm1, label = &quot;variable, color code&quot;)
 
 hidedecorations!(ax)
 
-fig</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« GeoMakie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.16 on <span class="colophon-date" title="Monday 25 April 2022 03:38">Monday 25 April 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+fig</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« GeoMakie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.16 on <span class="colophon-date" title="Monday 25 April 2022 03:59">Monday 25 April 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
