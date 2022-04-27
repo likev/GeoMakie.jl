@@ -13,7 +13,7 @@ fig = Figure()
 ax = GeoAxis(fig[1,1])
 contourf!(ax, lons, lats, field; shading = false)
 
-fig</code></pre><img src="./assets/contourf.png" alt="Contourf"></img><h2 id="Axis-configuration"><a class="docs-heading-anchor" href="#Axis-configuration">Axis configuration</a><a id="Axis-configuration-1"></a><a class="docs-heading-anchor-permalink" href="#Axis-configuration" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Makie, CairoMakie, GeoMakie
+fig</code></pre><img src="../assets/contourf.png" alt="Contourf"></img><h2 id="Axis-configuration"><a class="docs-heading-anchor" href="#Axis-configuration">Axis configuration</a><a id="Axis-configuration-1"></a><a class="docs-heading-anchor-permalink" href="#Axis-configuration" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Makie, CairoMakie, GeoMakie
 
 fig = Figure(resolution = (1000,1000))
 
@@ -38,7 +38,7 @@ axes[2, 1].ygridwidth = 2.0
 axes[2, 2].xticks = -180:10:180
 axes[2, 2].xticklabelsvisible[] = false
 hidexdecorations!(axes[2, 2])
-fig</code></pre><img src="./assets/axis_config.png" alt="Axis configuration"></img><h2 id="Black-Marble"><a class="docs-heading-anchor" href="#Black-Marble">Black Marble</a><a id="Black-Marble-1"></a><a class="docs-heading-anchor-permalink" href="#Black-Marble" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie, Makie
+fig</code></pre><img src="../assets/axis_config.png" alt="Axis configuration"></img><h2 id="Black-Marble"><a class="docs-heading-anchor" href="#Black-Marble">Black Marble</a><a id="Black-Marble-1"></a><a class="docs-heading-anchor-permalink" href="#Black-Marble" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie, Makie
 using Downloads
 
 # Get and load data
@@ -53,7 +53,7 @@ imgplot = image!(-180..180, -89.9..89.9, img; interpolate = false)
 
 fig
 # save at high resolution
-# save(&quot;blackmarble.png&quot;, fig; px_per_unit = 2)</code></pre><img src="./assets/blackmarble.png" alt="Black Marble"></img><h2 id="Italy&#39;s-states"><a class="docs-heading-anchor" href="#Italy&#39;s-states">Italy&#39;s states</a><a id="Italy&#39;s-states-1"></a><a class="docs-heading-anchor-permalink" href="#Italy&#39;s-states" title="Permalink"></a></h2><pre><code class="language-julia hljs">using CairoMakie, GeoMakie
+# save(&quot;blackmarble.png&quot;, fig; px_per_unit = 2)</code></pre><img src="../assets/blackmarble.png" alt="Black Marble"></img><h2 id="Italy&#39;s-states"><a class="docs-heading-anchor" href="#Italy&#39;s-states">Italy&#39;s states</a><a id="Italy&#39;s-states-1"></a><a class="docs-heading-anchor-permalink" href="#Italy&#39;s-states" title="Permalink"></a></h2><pre><code class="language-julia hljs">using CairoMakie, GeoMakie
 using GeoMakie.GeoJSON
 using Downloads
 # Acquire data
@@ -66,7 +66,7 @@ ga = GeoAxis(fig[1, 1]; dest = &quot;+proj=ortho +lon_0=12.5 +lat_0=42&quot;, lo
 plot!.(ga, basic; strokecolor = :blue, strokewidth = 1, color = (:blue, 0.5), shading = false);
 datalims!(ga)
 
-fig</code></pre><img src="./assets/italy.png" alt="Italy's states"></img><h2 id="Projections"><a class="docs-heading-anchor" href="#Projections">Projections</a><a id="Projections-1"></a><a class="docs-heading-anchor-permalink" href="#Projections" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie, Makie
+fig</code></pre><img src="../assets/italy.png" alt="Italy's states"></img><h2 id="Projections"><a class="docs-heading-anchor" href="#Projections">Projections</a><a id="Projections-1"></a><a class="docs-heading-anchor-permalink" href="#Projections" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie, Makie
 
 lons = -180:180
 lats = -90:90
@@ -82,7 +82,7 @@ surface!(ax1, lons, lats, field; shading = false, colormap = (:plasma, 0.45))
 surface!(ax2, lons, lats, field; shading = false)
 hidedecorations!(ax1)
 
-fig</code></pre><img src="./assets/projections.png" alt="Projections"></img><h2 id="Orthographic-projection"><a class="docs-heading-anchor" href="#Orthographic-projection">Orthographic projection</a><a id="Orthographic-projection-1"></a><a class="docs-heading-anchor-permalink" href="#Orthographic-projection" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie
+fig</code></pre><img src="../assets/projections.png" alt="Projections"></img><h2 id="Orthographic-projection"><a class="docs-heading-anchor" href="#Orthographic-projection">Orthographic projection</a><a id="Orthographic-projection-1"></a><a class="docs-heading-anchor-permalink" href="#Orthographic-projection" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie
 
 # Limited-domain projections (like orthographic) must have
 # their limits correctly set!
@@ -103,7 +103,7 @@ ga = GeoAxis(
 sp = surface!(ga, lons, lats, field; shading = false, colormap = :rainbow_bgyrm_35_85_c69_n256)
 cb = Colorbar(fig[1, 2], sp)
 
-fig</code></pre><img src="./assets/orthographic.png" alt="Orthographic projection"></img><h2 id="World-Population-centers"><a class="docs-heading-anchor" href="#World-Population-centers">World Population centers</a><a id="World-Population-centers-1"></a><a class="docs-heading-anchor-permalink" href="#World-Population-centers" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was contributed by Martijn Visser (@visr)
+fig</code></pre><img src="../assets/orthographic.png" alt="Orthographic projection"></img><h2 id="World-Population-centers"><a class="docs-heading-anchor" href="#World-Population-centers">World Population centers</a><a id="World-Population-centers-1"></a><a class="docs-heading-anchor-permalink" href="#World-Population-centers" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was contributed by Martijn Visser (@visr)
 using Makie, CairoMakie, GeoMakie
 using GeoMakie.GeoJSON
 using Downloads
@@ -130,7 +130,7 @@ pop = Downloads.download(url * &quot;ne_10m_populated_places_simple.geojson&quot
 pop_geo = GeoJSON.read(read(pop, String))
 scatter!(ga, GeoMakie.geo2basic(pop_geo), color=&quot;lightgrey&quot;, markersize=1.2)
 
-fig</code></pre><img src="./assets/world_population.png" alt="World Population centers"></img><h2 id="Field-and-countries"><a class="docs-heading-anchor" href="#Field-and-countries">Field and countries</a><a id="Field-and-countries-1"></a><a class="docs-heading-anchor-permalink" href="#Field-and-countries" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was taken from Lazar Alonso&#39;s
+fig</code></pre><img src="../assets/world_population.png" alt="World Population centers"></img><h2 id="Field-and-countries"><a class="docs-heading-anchor" href="#Field-and-countries">Field and countries</a><a id="Field-and-countries-1"></a><a class="docs-heading-anchor-permalink" href="#Field-and-countries" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was taken from Lazar Alonso&#39;s
 # BeautifulMakie.jl repository.  It has some really
 # good stuff - check it out!
 using Makie, CairoMakie, GeoMakie
@@ -166,7 +166,7 @@ hm2 = poly!(
 
 cb = Colorbar(fig[1,2]; colorrange = (1, n), colormap = Reverse(:plasma), label = &quot;variable, color code&quot;, height = Relative(0.65))
 
-fig</code></pre><img src="./assets/field_and_countries.png" alt="Field and countries"></img><h2 id="GraphMakie-with-GeoMakie"><a class="docs-heading-anchor" href="#GraphMakie-with-GeoMakie">GraphMakie with GeoMakie</a><a id="GraphMakie-with-GeoMakie-1"></a><a class="docs-heading-anchor-permalink" href="#GraphMakie-with-GeoMakie" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was adapted from code in https://discourse.julialang.org/t/combine-makie-with-gmt-jl/74347
+fig</code></pre><img src="../assets/field_and_countries.png" alt="Field and countries"></img><h2 id="GraphMakie-with-GeoMakie"><a class="docs-heading-anchor" href="#GraphMakie-with-GeoMakie">GraphMakie with GeoMakie</a><a id="GraphMakie-with-GeoMakie-1"></a><a class="docs-heading-anchor-permalink" href="#GraphMakie-with-GeoMakie" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was adapted from code in https://discourse.julialang.org/t/combine-makie-with-gmt-jl/74347
 using GeoMakie, CairoMakie
 using GraphMakie, Graphs, Downloads
 using GeoMakie.GeoJSON, GeoMakie.GeoInterface
@@ -223,7 +223,7 @@ graphplot!(
 # (this is why we removed Alaska)
 datalims!(ga)
 
-fig</code></pre><img src="./assets/graph_on_usa.png" alt="GraphMakie with GeoMakie"></img><h2 id="Rotating-Earth"><a class="docs-heading-anchor" href="#Rotating-Earth">Rotating Earth</a><a id="Rotating-Earth-1"></a><a class="docs-heading-anchor-permalink" href="#Rotating-Earth" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Makie, CairoMakie, GeoMakie
+fig</code></pre><img src="../assets/graph_on_usa.png" alt="GraphMakie with GeoMakie"></img><h2 id="Rotating-Earth"><a class="docs-heading-anchor" href="#Rotating-Earth">Rotating Earth</a><a id="Rotating-Earth-1"></a><a class="docs-heading-anchor-permalink" href="#Rotating-Earth" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Makie, CairoMakie, GeoMakie
 
 destnode = Observable(&quot;+proj=ortho&quot;)
 
@@ -248,4 +248,4 @@ end
 </code></pre><video controls autoplay loop>
   <source src="https://user-images.githubusercontent.com/32143268/165003843-db5984f0-9ccf-49f7-847e-88fd63e80bb4.mp4" type="video/mp4">
   Your browser does not support this video.
-</video></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« GeoMakie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.16 on <span class="colophon-date" title="Wednesday 27 April 2022 19:44">Wednesday 27 April 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+</video></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« GeoMakie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.16 on <span class="colophon-date" title="Wednesday 27 April 2022 21:17">Wednesday 27 April 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
