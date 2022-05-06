@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · GeoMakie.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.044/juliamono.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">GeoMakie.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">GeoMakie.jl</a></li><li class="is-active"><a class="tocitem" href>Examples</a><ul class="internal"><li><a class="tocitem" href="#Contourf"><span>Contourf</span></a></li><li><a class="tocitem" href="#Axis-configuration"><span>Axis configuration</span></a></li><li><a class="tocitem" href="#Italy&#39;s-states"><span>Italy&#39;s states</span></a></li><li><a class="tocitem" href="#Projections"><span>Projections</span></a></li><li><a class="tocitem" href="#Orthographic-projection"><span>Orthographic projection</span></a></li><li><a class="tocitem" href="#World-Population-centers"><span>World Population centers</span></a></li><li><a class="tocitem" href="#Field-and-countries"><span>Field and countries</span></a></li><li><a class="tocitem" href="#GraphMakie-with-GeoMakie"><span>GraphMakie with GeoMakie</span></a></li><li><a class="tocitem" href="#Rotating-Earth"><span>Rotating Earth</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Examples</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaPlots/GeoMakie.jl/blob/master/docs/src/examples.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h2 id="Contourf"><a class="docs-heading-anchor" href="#Contourf">Contourf</a><a id="Contourf-1"></a><a class="docs-heading-anchor-permalink" href="#Contourf" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · GeoMakie.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.044/juliamono.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.11/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">GeoMakie.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">GeoMakie.jl</a></li><li class="is-active"><a class="tocitem" href>Examples</a><ul class="internal"><li><a class="tocitem" href="#Contourf"><span>Contourf</span></a></li><li><a class="tocitem" href="#Axis-configuration"><span>Axis configuration</span></a></li><li><a class="tocitem" href="#Italy&#39;s-states"><span>Italy&#39;s states</span></a></li><li><a class="tocitem" href="#Projections"><span>Projections</span></a></li><li><a class="tocitem" href="#Orthographic-projection"><span>Orthographic projection</span></a></li><li><a class="tocitem" href="#World-Population-centers"><span>World Population centers</span></a></li><li><a class="tocitem" href="#Field-and-countries"><span>Field and countries</span></a></li><li><a class="tocitem" href="#Rotating-Earth"><span>Rotating Earth</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Examples</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaPlots/GeoMakie.jl/blob/master/docs/src/examples.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h2 id="Contourf"><a class="docs-heading-anchor" href="#Contourf">Contourf</a><a id="Contourf-1"></a><a class="docs-heading-anchor-permalink" href="#Contourf" title="Permalink"></a></h2><pre><code class="language-julia hljs">using GeoMakie, CairoMakie
 
 lons = -180:180
 lats = -90:90
@@ -151,64 +151,7 @@ hm2 = poly!(
 
 cb = Colorbar(fig[1,2]; colorrange = (1, n), colormap = Reverse(:plasma), label = &quot;variable, color code&quot;, height = Relative(0.65))
 
-fig</code></pre><img src="../assets/field_and_countries.png" alt="Field and countries"></img><h2 id="GraphMakie-with-GeoMakie"><a class="docs-heading-anchor" href="#GraphMakie-with-GeoMakie">GraphMakie with GeoMakie</a><a id="GraphMakie-with-GeoMakie-1"></a><a class="docs-heading-anchor-permalink" href="#GraphMakie-with-GeoMakie" title="Permalink"></a></h2><pre><code class="language-julia hljs"># This example was adapted from code in https://discourse.julialang.org/t/combine-makie-with-gmt-jl/74347
-using GeoMakie, CairoMakie
-using GraphMakie, Graphs, Downloads
-using GeoMakie.GeoJSON, GeoMakie.GeoInterface
-
-states = Downloads.download(&quot;https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json&quot;)
-states_geo = GeoJSON.read(read(states, String))
-# Get rid of Alaska
-filter!((x-&gt;!(x.properties[&quot;name&quot;] ∈ (&quot;Alaska&quot;, &quot;Hawaii&quot;, &quot;Puerto Rico&quot;))), states_geo.features)
-
-n = length(GeoInterface.features(states_geo))
-
-#g = wheel_graph(10)
-gpos = Dict(
-    (-96.5967, 38.9617) =&gt; &quot;KSCYng&quot;,
-    (-122.3, 47.6) =&gt; &quot;STTLng&quot;,
-    (-105.0, 40.75) =&gt; &quot;DNVRng&quot;,
-    (-122.026, 37.3858) =&gt; &quot;SNVAng&quot;,
-    (-87.6167, 41.8333) =&gt; &quot;CHINng&quot;,
-    (-85.5, 34.5) =&gt; &quot;ATLAng&quot;,
-    (-77.0268, 38.8973) =&gt; &quot;WASHng&quot;,
-    (-73.9667, 40.7833) =&gt; &quot;NYCMng&quot;,
-    (-86.1595, 39.7806) =&gt; &quot;IPLSng&quot;,
-    (-95.5174, 29.77) =&gt; &quot;HSTNng&quot;,
-    (-118.25, 34.05) =&gt; &quot;LOSAng&quot;,
-    (-84.3833, 33.75) =&gt; &quot;ATLAM5&quot;)
-
-g = complete_graph(length(keys(gpos)))
-positions = Point2f.(collect(keys(gpos)))
-
-fig = Figure(resolution = (1200, 800), fontsize = 22)
-ga = GeoAxis(
-    fig[1, 1],
-    source = &quot;+proj=longlat +datum=WGS84&quot;,
-    dest = &quot;+proj=lcc +lon_0=-100 +lat_1=33 +lat_2=45&quot;,
-    title = &quot;Projection: lcc +lon_0=-100 +lat_1=33 +lat_2=45&quot;,
-    coastlines = false,
-    lonlims = automatic, latlims = automatic,
-)
-
-poly!(
-    ga, states_geo;
-    color = 1:n, colormap = (:viridis, 0.25),
-    strokecolor = :black, strokewidth = 1
-)
-
-graphplot!(
-    ga, g;
-    layout = _ -&gt; positions, node_size = 1,
-    edge_color = cgrad(:plasma)[LinRange(0, 1, 66)],
-    node_color = cgrad(:plasma)[LinRange(0, 1, length(keys(gpos)))]
-)
-
-# Set the limits to the extrema of the data
-# (this is why we removed Alaska)
-datalims!(ga)
-
-fig</code></pre><img src="../assets/graph_on_usa.png" alt="GraphMakie with GeoMakie"></img><h2 id="Rotating-Earth"><a class="docs-heading-anchor" href="#Rotating-Earth">Rotating Earth</a><a id="Rotating-Earth-1"></a><a class="docs-heading-anchor-permalink" href="#Rotating-Earth" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Makie, CairoMakie, GeoMakie
+fig</code></pre><img src="../assets/field_and_countries.png" alt="Field and countries"></img><h2 id="Rotating-Earth"><a class="docs-heading-anchor" href="#Rotating-Earth">Rotating Earth</a><a id="Rotating-Earth-1"></a><a class="docs-heading-anchor-permalink" href="#Rotating-Earth" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Makie, CairoMakie, GeoMakie
 
 destnode = Observable(&quot;+proj=ortho&quot;)
 
@@ -233,4 +176,4 @@ end
 </code></pre><video controls autoplay loop>
   <source src="https://user-images.githubusercontent.com/32143268/165003843-db5984f0-9ccf-49f7-847e-88fd63e80bb4.mp4" type="video/mp4">
   Your browser does not support this video.
-</video></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« GeoMakie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.16 on <span class="colophon-date" title="Wednesday 4 May 2022 16:41">Wednesday 4 May 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+</video></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../">« GeoMakie.jl</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.16 on <span class="colophon-date" title="Friday 6 May 2022 20:13">Friday 6 May 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
